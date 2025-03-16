@@ -1,26 +1,10 @@
 {
+  "extends": "./tsconfig.json", // Extiende la configuración base
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "jsx": "react-jsx", // Habilita JSX (para proyectos con React)
+    "outDir": "./dist", // Carpeta de salida para los archivos compilados
+    "sourceMap": true // Genera mapas de fuente para debugging
   },
-  "include": ["src"]
+  "include": ["src/**/*"], // Incluye todos los archivos en la carpeta src
+  "exclude": ["**/*.test.ts", "**/*.test.tsx"] // Excluye archivos de pruebas
 }

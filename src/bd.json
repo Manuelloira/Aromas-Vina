@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "name": "Malleolus de Valderramiro 2016",
+      "description": "El Malleolus de Valderramiro es un vino tinto de la Denominación de Origen Ribera del Duero, elaborado por Bodegas Emilio Moro. Este vino es un homenaje a la parcela Valderramiro, un viñedo centenario de la familia Moro. Con una crianza de 18 meses en barricas de roble francés, este vino es un ejemplo de elegancia y complejidad.",
+      "price": "120.00€",
+      "image": "../assets/vino1.jpg",
+      "region": "Ribera del Duero, España"
+    },
+    {
+      "id": 2,
+      "name": "Ramón Do Casar Ribeiro",
+      "description": "El Ramón Do Casar es un vino blanco de la Denominación de Origen Ribeiro, elaborado con uvas autóctonas como Treixadura, Loureira y Albariño. Este vino destaca por su frescura, elegancia y aromas frutales, siendo un excelente representante de los vinos gallegos.",
+      "price": "15.00€",
+      "image": "../assets/vino2.jpg",
+      "region": "Ribeiro, Galicia, España"
+    },
+    {
+      "id": 3,
+      "name": "Montrachet Grand Cru",
+      "description": "El Montrachet Grand Cru es uno de los vinos blancos más exclusivos y prestigiosos del mundo, elaborado en la región de Borgoña, Francia. Producido por Louis Latour, este vino es un ejemplo de elegancia, complejidad y longevidad. Con uvas Chardonnay cultivadas en el célebre viñedo de Montrachet, este vino es un ícono de la enología mundial.",
+      "price": "500.00€",
+      "image": "../assets/vino3.jpg",
+      "region": "Beaune, Côte-d'Or, Borgoña, Francia"
+    },
+    {
+      "id": 4,
+      "name": "L'Ermita de l'Ermità 2000",
+      "description": "L'Ermita de l'Ermità es un vino tinto de la Denominación de Origen Priorat, elaborado por la bodega Álvaro Palacios. Este vino, procedente de un viñedo histórico de más de 80 años, es un ejemplo de elegancia y complejidad. Con una crianza prolongada, este Gran Vino de Guarda es una joya de la enología española.",
+      "price": "€800.00",
+      "image": "../assets/vino4.jpg",
+      "region": "Priorat, Cataluña, España"
+    },
+    {
+      "id": 5,
+      "name": "Vega Sicilia Único 1985",
+      "description": "Vega Sicilia Único es uno de los vinos más emblemáticos de España, procedente de la Denominación de Origen Ribera del Duero. Este vino, elaborado principalmente con uvas Tinto Fino (Tempranillo), es un ejemplo de elegancia y longevidad. La añada 1985 es considerada una de las mejores, con un equilibrio perfecto entre fruta, taninos y acidez. Ideal para coleccionistas y amantes de los grandes vinos.",
+      "price": "€1,200.00",
+      "image": "../assets/vino5.jpg",
+      "region": "Ribera del Duero, Castilla y León, España"
+    },
+    {
+      "id": 6,
+      "name": "Château Angélus 1er Grand Cru Classé 1999",
+      "description": "Château Angélus es uno de los más prestigiosos vinos de Saint-Émilion, en la región de Burdeos. La añada 1999 es un blend de Merlot y Cabernet Franc, que ofrece una complejidad aromática con notas de frutas negras, especias y toques de roble. Este vino es un ejemplo de la excelencia bordelesa, con un potencial de guarda excepcional.",
+      "price": "€900.00",
+      "image": "../assets/vino6.jpg",
+      "region": "Saint-Émilion, Burdeos, Francia"
+    },
+    {
+      "id": 7,
+      "name": "Weingut Kanzemer Berg Maximilian von Othegraven Kanzem",
+      "description": "Este vino blanco es un Riesling de la región de Saar, en Alemania, elaborado por la bodega von Othegraven. Es un vino de gran elegancia, con notas cítricas, minerales y un toque de petricor. Perfecto para maridar con mariscos o platos ligeros, este Riesling es un ejemplo de la finura y precisión de los vinos alemanes.",
+      "price": "€150.00",
+      "image": "../assets/vino7.jpg",
+      "region": "Saar, Alemania"
+    },
+    {
+      "id": 8,
+      "name": "Emilio Moro Clon de la Familia 2011",
+      "description": "El Clon de la Familia es uno de los vinos más exclusivos de Bodegas Emilio Moro, en la Denominación de Origen Ribera del Duero. Este vino, elaborado con uvas Tinto Fino (Tempranillo) de viñedos centenarios, es un ejemplo de potencia y elegancia. Con notas de frutas negras, especias y un toque de vainilla, es un vino ideal para guardar y disfrutar en ocasiones especiales.",
+      "price": "€300.00",
+      "image": "../assets/vino8.jpg",
+      "region": "Ribera del Duero, Castilla y León, España"
+    },
+    {
+      "id": 9,
+      "name": "Clos Sainte-Sophie Blanc de Blancs Brut Nature 2014",
+      "description": "Este champán es un Blanc de Blancs elaborado por Jacques Lassaigne en la región de Champagne, Francia. Proveniente de viñedos de Chardonnay, es un vino espumoso de gran pureza, con notas cítricas, florales y un toque mineral. Brut Nature, sin adición de azúcar, lo que lo convierte en un champán fresco y vibrante.",
+      "price": "€200.00",
+      "image": "../assets/vino9.jpg",
+      "region": "Champagne, Francia"
+    },
+    {
+      "id": 10,
+      "name": "La Nieta 2016",
+      "description": "La Nieta es un vino tinto de la Denominación de Origen Rioja, elaborado por la bodega Viñedos de Páganos. Este vino, hecho con uvas Tempranillo de viñedos viejos, es un ejemplo de elegancia y frescura. Con notas de frutas rojas, especias y un toque de roble, es un vino perfecto para disfrutar en su juventud o guardar durante algunos años.",
+      "price": "€180.00",
+      "image": "../assets/vino10.jpg",
+      "region": "Rioja, España"
+    }
+  ]

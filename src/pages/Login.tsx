@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../service/firebase";
-
+import { AuthCredential, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -9,7 +8,7 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(getAuth(), email, password);
       alert("Inicio de sesión exitoso");
     } catch (error) {
       alert("Error al iniciar sesión: " + (error as Error).message);
