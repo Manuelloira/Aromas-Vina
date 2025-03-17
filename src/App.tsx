@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
+import ProductDetail from "./pages/ProductDetail";
+import { AuthProvider } from "./context/AuthContext"; // Importa el proveedor
+import { CartProvider } from "./context/CartContext"; // Importa el proveedor
 
 // Define el tipo de un producto
 interface Product {
@@ -53,9 +56,13 @@ const App = () => {
       <div className="flex flex-col min-h-screen">
         <Header />
         <Routes>
-          <Route path="/" element={<Home products={products} />} />
+          <Route path="/home" element={<Home products={products} />} />
           <Route path="/products" element={<Products products={products} />} />
-          {/* Otras rutas */}
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/Origen" element={<Products products={products} />} />
+          <Route path="/Login"element={<Products products={products} />} />
+          <Route path="/Registro"element={<Products products={products} />} />
+          <Route path="/ShoppingCart"element={<Products products={products} />} />
         </Routes>
         <Footer />
       </div>

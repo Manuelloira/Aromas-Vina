@@ -1,0 +1,42 @@
+/* styles/Origen.css */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .background-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .origen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+  
+  .titulo-origen {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .contenido-origen {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .imagen-origen img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .texto-origen {
+    max-width: 600px;
+    text-align: left;
+  }

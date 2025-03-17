@@ -1,0 +1,150 @@
+/* Estilos generales del header */
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+  }
+  
+  /* Sección superior del header */
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  /* Botones de idioma */
+  .language-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .language-button {
+    padding: 0.5rem 1rem;
+    background-color: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .language-button:hover {
+    background-color: #cbd5e0;
+  }
+  
+  /* Logo */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+    opacity: 0.8;
+  }
+  
+  /* Acciones del header (carrito, botones de autenticación, barra de búsqueda) */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cart-button,
+  .logout-button,
+  .login-button,
+  .register-button {
+    padding: 0.5rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .cart-button {
+    background-color: #3b82f6;
+  }
+  
+  .cart-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .logout-button {
+    background-color: #ef4444;
+  }
+  
+  .logout-button:hover {
+    background-color: #dc2626;
+  }
+  
+  .login-button {
+    background-color: #22c55e;
+  }
+  
+  .login-button:hover {
+    background-color: #16a34a;
+  }
+  
+  .register-button {
+    background-color: #eab308;
+  }
+  
+  .register-button:hover {
+    background-color: #ca8a04;
+  }
+  
+  /* Barra de búsqueda */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+  
+  .search-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #6b7280;
+  }
+  
+  .search-input {
+    margin-left: 0.5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  /* Navegación */
+  .navigation {
+    background-color: #1f2937;
+    padding: 0.75rem 0;
+    width: 100%;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 1.5rem;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #374151;
+    border-radius: 8px;
+  }
+  
+  .nav-link:hover {
+    background-color: #4b5563;
+  }
