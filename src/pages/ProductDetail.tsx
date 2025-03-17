@@ -3,8 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 import "../styles/productDetail.css";
 
 // Importa las imágenes de los vinos
@@ -157,7 +156,6 @@ const ProductDetail = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
       <section className="product-detail-container">
         {/* Imagen del producto */}
         <div className="product-detail-image-container">
@@ -192,7 +190,6 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

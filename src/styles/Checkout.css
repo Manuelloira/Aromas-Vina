@@ -1,0 +1,78 @@
+/* Estilos generales del contenedor */
+.checkout-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Títulos */
+  .checkout-container h1 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+  }
+  
+  .checkout-container h2 {
+    font-size: 1.5rem;
+    color: #374151;
+    margin-bottom: 2rem;
+  }
+  
+  /* Párrafos */
+  .checkout-container p {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Botones comunes */
+  .checkout-container button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Botón de inicio de sesión */
+  .login-button {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .login-button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Botón para continuar comprando */
+  .continue-shopping-button {
+    background-color: #10b981;
+    color: white;
+  }
+  
+  .continue-shopping-button:hover {
+    background-color: #059669;
+  }
+  
+  /* Botón de confirmar pago */
+  .confirm-button {
+    background-color: #eab308;
+    color: white;
+  }
+  
+  .confirm-button:hover {
+    background-color: #ca8a04;
+  }
+  
+  /* Mensajes de error o advertencia */
+  .checkout-container .error-message {
+    color: #ef4444;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }

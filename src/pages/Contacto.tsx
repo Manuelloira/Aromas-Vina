@@ -1,15 +1,8 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const Contacto: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-      <div
-        className="flex-grow bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: "url('/assets/CONTACTO.jpg')" }}
-      >
         <div className="bg-white bg-opacity-90 p-8 rounded-lg max-w-2xl w-full mx-4">
           <h1 className="text-3xl font-bold mb-4">Contacta con Nosotros</h1>
           <p className="mb-8">¿Tienes alguna pregunta o comentario? ¡Nos encantaría escucharte!</p>
@@ -32,8 +25,6 @@ const Contacto: React.FC = () => {
           </form>
         </div>
       </div>
-      <Footer />
-    </div>
   );
 };
 

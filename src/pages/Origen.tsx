@@ -1,4 +1,6 @@
 import React from "react";
+import CeoImagen from "../assets/CEO.jpg";
+import "../styles/Origen.css";
 
 const Origen = () => {
   return (
@@ -8,8 +10,9 @@ const Origen = () => {
         <h1 className="titulo-origen">Nuestro Origen</h1>
         <div className="contenido-origen">
           <div className="imagen-origen">
-            <img src="../img/CEO.jpg" alt="Foto de Manuel Loira" className="ceo-img" />
+            <img src={CeoImagen} alt="Foto de Manuel Loira" className="ceo-img" />
           </div>
+          
           <div className="texto-origen">
             <p>
               Manuel Loira es un joven visionario y un ferviente defensor de la rica tradición vinícola de Galicia, región emblemática por su ancestral tradición en la producción de vinos excepcionales. Criado entre las verdes colinas y los valles bañados por el Atlántico, Manuel siente en su alma la conexión profunda con la tierra que lo vio nacer, y desde muy temprana edad, supo que su destino estaba ligado a la viticultura.
