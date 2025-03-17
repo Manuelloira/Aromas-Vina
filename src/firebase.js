@@ -19,4 +19,3 @@ const auth = getAuth(app); // Inicializa Firebase Auth
 const db = getFirestore(app); // Inicializa Firestore
 
 export { auth, app }; // Exporta las instancias
-export { db }; // Exporta db para usarlo en otros archivos

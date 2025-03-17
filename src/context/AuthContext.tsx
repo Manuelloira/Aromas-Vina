@@ -1,4 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { auth } from "../firebase";
 import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
@@ -6,7 +8,6 @@ import {
   signOut,
   fetchSignInMethodsForEmail,
 } from "firebase/auth";
-import { auth } from "../firebase"; // Importa la instancia de auth
 
 interface User {
   email: string;

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { db } from "./firebase"; // Importa db desde firebase.js
-import { ref, get } from "firebase/database"; // Importa funciones de Firebase Realtime Database
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 // Define el tipo de un producto
 interface Product {
@@ -19,24 +18,24 @@ interface Product {
 
 const App = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const db = getFirestore();
 
-  // Cargar productos desde Firebase al iniciar la aplicación
+  // Cargar productos desde Firestore al iniciar la aplicación
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const productsRef = ref(db, "products"); // "products" es el nodo raíz
-        const snapshot = await get(productsRef);
-        if (snapshot.exists()) {
-          const productsData: Product[] = Object.entries(snapshot.val()).map(
-            ([id, data]: [string, any]) => ({
-              id,
-              name: data.name,
-              description: data.description,
-              price: data.price,
-              image: data.image,
-              region: data.region,
-            })
-          );
+        const productsRef = collection(db, "products"); // "products" es la colección en Firestore
+        const querySnapshot = await getDocs(productsRef);
+
+        if (!querySnapshot.empty) {
+          const productsData: Product[] = querySnapshot.docs.map((doc) => ({
+            id: doc.id, // El ID del documento
+            name: doc.data().name,
+            description: doc.data().description,
+            price: doc.data().price,
+            image: doc.data().image,
+            region: doc.data().region,
+          }));
           setProducts(productsData);
         } else {
           console.log("No hay datos disponibles");
@@ -47,7 +46,7 @@ const App = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, [db]);
 
   return (
     <Router>
