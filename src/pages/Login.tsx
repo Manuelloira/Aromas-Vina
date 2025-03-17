@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/Login.css";
 import { AuthCredential, signInWithEmailAndPassword } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 const Login: React.FC = () => {
@@ -16,31 +17,36 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold text-center">Iniciar Sesión</h1>
-      <form onSubmit={handleLogin} className="mt-8 max-w-md mx-auto">
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-2 border rounded mt-4"
-        />
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded mt-4"
-        >
+    <div className="login-container">
+    <div className="login-card">
+      <h1>Iniciar Sesión</h1>
+      <form onSubmit={handleLogin} className="login-form">
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Introduce tu email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Introduce tu contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit" className="login-button">
           Iniciar Sesión
         </button>
       </form>
     </div>
+  </div>
   );
 };
 

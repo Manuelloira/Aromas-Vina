@@ -1,5 +1,6 @@
 // Products.tsx
 import React from "react";
+import { database } from "../utils/firebase.utils"; // Asegúrate de que la ruta sea correcta
 
 interface Product {
   id: string;

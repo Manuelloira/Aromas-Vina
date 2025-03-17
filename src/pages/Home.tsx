@@ -1,24 +1,28 @@
 import React from "react";
 import HomeImage from "../assets/HOME.jpg";
 import { Link } from "react-router-dom";
-import "../styles/Home.css"; // Importa el archivo CSS
+import "../styles/Home.css";
+import ProductList from "../components/ProductList";
+
+interface Product {
+  id: string;
+  name: string;
+  description: string;
+  price: string;
+  image: string;
+  region: string;
+}
 
 interface HomeProps {
-  products: {
-    id: string;
-    name: string;
-    description: string;
-    price: string;
-    image: string;
-    region: string;
-  }[];
+  products: Product[];
 }
 
 const Home: React.FC<HomeProps> = ({ products }) => {
-  const featuredProducts = products.slice(0, 5); // Muestra los primeros 3 productos como destacados
+  const featuredProducts = products.slice(0, 5); // Muestra los primeros 5 productos como destacados
 
   return (
     <div className="home-container">
+      {/* Sección del banner */}
       <section className="banner">
         <img src={HomeImage} alt="Fondo Inicio" />
         <div className="banner-content">
@@ -27,6 +31,8 @@ const Home: React.FC<HomeProps> = ({ products }) => {
           <Link to="/products">Ver Productos</Link>
         </div>
       </section>
+
+      {/* Sección de productos destacados */}
       <section className="featured-products">
         <h2>Productos Destacados</h2>
         <div className="product-grid">
@@ -39,6 +45,12 @@ const Home: React.FC<HomeProps> = ({ products }) => {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Sección de todos los productos usando ProductList */}
+      <section className="all-products">
+        <h2>Todos Nuestros Productos</h2>
+        <ProductList /> {/* No es necesario pasar la prop "products" */}
       </section>
     </div>
   );
