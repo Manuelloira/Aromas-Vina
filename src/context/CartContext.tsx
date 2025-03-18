@@ -1,19 +1,12 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { useAuth } from "./AuthContext";
-
-interface Item {
-  id: string;
-  title: string;
-  cost: number;
-  imageUrl: string;
-  count: number;
-}
+import { Item } from "../types/types";
 
 interface CartContextProps {
   cartItems: Item[];
-  addItem: (item: Item) => void;
-  removeItem: (itemId: string) => void;
-  modifyQuantity: (itemId: string, count: number) => void;
+  addItem: (item: Item, quantity: number) => void;
+  removeItem: (itemId: number) => void; // Cambiado a number
+  modifyQuantity: (itemId: number, count: number) => void; // Cambiado a number
   emptyCart: () => void;
   totalAmount: number;
 }
@@ -41,7 +34,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [cartItems, isAuthenticated, currentUser]);
 
-  const addItem = (item: Item) => {
+  const addItem = (item: Item, quantity: number) => {
     if (!isAuthenticated) {
       alert("Debes estar autenticado para añadir productos al carrito.");
       return;
@@ -51,14 +44,14 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       const existingItem = prevCart.find((product) => product.id === item.id);
       if (existingItem) {
         return prevCart.map((product) =>
-          product.id === item.id ? { ...product, count: product.count + 1 } : product
+          product.id === item.id ? { ...product, count: product.count + quantity } : product
         );
       }
-      return [...prevCart, { ...item, count: 1 }];
+      return [...prevCart, { ...item, count: quantity }];
     });
   };
 
-  const modifyQuantity = (itemId: string, count: number) => {
+  const modifyQuantity = (itemId: number, count: number) => {
     setCartItems((prevCart) =>
       prevCart.map((product) =>
         product.id === itemId ? { ...product, count } : product
@@ -66,7 +59,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
-  const removeItem = (itemId: string) => {
+  const removeItem = (itemId: number) => {
     setCartItems((prevCart) => prevCart.filter((product) => product.id !== itemId));
   };
 
