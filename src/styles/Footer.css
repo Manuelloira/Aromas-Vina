@@ -81,6 +81,8 @@ footer {
 /* Iconos de redes sociales */
 .social-icons {
   display: flex;
+  align-items: baseline; /* Alinea los iconos en la línea base */
+  justify-content: flex-end; /* Alinea los iconos a la derecha */
   gap: 1.5rem; /* Espacio entre iconos */
 }
 
@@ -94,9 +96,8 @@ footer {
 }
 
 .social-icons img {
-  height: 1.75rem; /* Tamaño de los iconos */
-  width: 1.75rem; /* Tamaño de los iconos */
-  filter: brightness(0) invert(1); /* Iconos en blanco */
+  height: 2.75rem; /* Tamaño de los iconos */
+  width: 2.75rem; /* Tamaño de los iconos */
   transition: filter 0.3s ease;
 }
 

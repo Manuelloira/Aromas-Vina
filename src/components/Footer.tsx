@@ -1,5 +1,8 @@
 import React from "react";
 import "../styles/Footer.css"; // Importa el archivo CSS
+import LogoX from "../assets/X.png";
+import LogoWhatsapp from "../assets/vecteezy_whatsapp-apps-icon_19874356.png";
+
 
 const Footer: React.FC = () => {
   return (
@@ -26,10 +29,10 @@ const Footer: React.FC = () => {
       <div>
         <div className="social-icons">
           <a href="#">
-            <img src="/assets/P7DIW_ICONS/instagram.svg" alt="Instagram" />
+          <img src={LogoX} alt="Logo X" className="logo" />
           </a>
           <a href="#">
-            <img src="/assets/P7DIW_ICONS/whatsapp.svg" alt="Whatsapp" />
+          <img src={LogoWhatsapp} alt="Logo Whatsapp" className="logo" />
           </a>
         </div>
       </div>
