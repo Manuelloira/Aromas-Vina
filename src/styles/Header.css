@@ -1,150 +1,212 @@
 /* Estilos generales del header */
 .header {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100vw;
-  }
-  
-  /* Sección superior del header */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sección superior del header */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Botones de idioma */
+.language-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-button {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-button:hover {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* Acciones del header (carrito, botones de autenticación, barra de búsqueda) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cart-button,
+.logout-button,
+.login-button,
+.register-button {
+  padding: 0.5rem 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-button {
+  background-color: #3b82f6;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.logout-button {
+  background-color: #ef4444;
+}
+
+.logout-button:hover {
+  background-color: #dc2626;
+  transform: translateY(-2px);
+}
+
+.login-button {
+  background-color: #22c55e;
+}
+
+.login-button:hover {
+  background-color: #16a34a;
+  transform: translateY(-2px);
+}
+
+.register-button {
+  background-color: #eab308;
+}
+
+.register-button:hover {
+  background-color: #ca8a04;
+  transform: translateY(-2px);
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f3f4f6;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.search-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #6b7280;
+}
+
+.search-input {
+  margin-left: 0.5rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  color: #333;
+  width: 200px;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Navegación */
+.navigation {
+  background-color: #1f2937;
+  padding: 0.75rem 0;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav-link {
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
     padding: 1rem;
   }
-  
-  /* Botones de idioma */
-  .language-buttons {
-    display: flex;
-    gap: 0.5rem;
-  }
-  
-  .language-button {
-    padding: 0.5rem 1rem;
-    background-color: #e2e8f0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .language-button:hover {
-    background-color: #cbd5e0;
-  }
-  
-  /* Logo */
-  .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    width: 6rem;
-    height: 6rem;
-    object-fit: contain;
-    opacity: 0.8;
-  }
-  
-  /* Acciones del header (carrito, botones de autenticación, barra de búsqueda) */
+
   .header-actions {
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 1rem;
   }
-  
-  .cart-button,
-  .logout-button,
-  .login-button,
-  .register-button {
-    padding: 0.5rem 1rem;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 500;
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
   }
-  
-  .cart-button {
-    background-color: #3b82f6;
-  }
-  
-  .cart-button:hover {
-    background-color: #2563eb;
-  }
-  
-  .logout-button {
-    background-color: #ef4444;
-  }
-  
-  .logout-button:hover {
-    background-color: #dc2626;
-  }
-  
-  .login-button {
-    background-color: #22c55e;
-  }
-  
-  .login-button:hover {
-    background-color: #16a34a;
-  }
-  
-  .register-button {
-    background-color: #eab308;
-  }
-  
-  .register-button:hover {
-    background-color: #ca8a04;
-  }
-  
-  /* Barra de búsqueda */
+
   .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #f3f4f6;
-    padding: 0.5rem;
-    border-radius: 8px;
-  }
-  
-  .search-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    color: #6b7280;
-  }
-  
-  .search-input {
-    margin-left: 0.5rem;
-    background: transparent;
-    border: none;
-    outline: none;
-  }
-  
-  /* Navegación */
-  .navigation {
-    background-color: #1f2937;
-    padding: 0.75rem 0;
     width: 100%;
   }
-  
-  .nav-links {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 80rem;
-    margin: 0 auto;
+
+  .search-input {
+    width: 100%;
   }
-  
-  .nav-link {
-    padding: 0.5rem 1.5rem;
-    color: white;
-    font-size: 1.125rem;
-    font-weight: 600;
-    text-decoration: none;
-    background-color: #374151;
-    border-radius: 8px;
-  }
-  
-  .nav-link:hover {
-    background-color: #4b5563;
-  }
+}

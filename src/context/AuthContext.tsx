@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { collection, doc, setDoc, getFirestore } from "firebase/firestore";
 import { auth } from "../firebase";
 import {
   onAuthStateChanged,
@@ -7,17 +7,28 @@ import {
   signInWithEmailAndPassword,
   signOut,
   fetchSignInMethodsForEmail,
+  sendEmailVerification,
 } from "firebase/auth";
 
 interface User {
   email: string;
   username?: string;
+  firstName?: string;
+  lastName?: string;
+  birthDate?: string;
 }
 
 interface AuthContextType {
   isAuthenticated: boolean;
   currentUser: User | null;
-  signUp: (email: string, password: string, username?: string) => Promise<void>;
+  signUp: (
+    email: string,
+    password: string,
+    username: string,
+    firstName: string,
+    lastName: string,
+    birthDate: string
+  ) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signOutUser: () => Promise<void>;
 }
@@ -42,18 +53,44 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return () => unsubscribe();
   }, []);
 
-  const signUp = async (email: string, password: string, username?: string) => {
+  const signUp = async (
+    email: string,
+    password: string,
+    username: string,
+    firstName: string,
+    lastName: string,
+    birthDate: string
+  ) => {
     try {
+      // Verificar si el correo ya está en uso
       const existingMethods = await fetchSignInMethodsForEmail(auth, email);
       if (existingMethods.length > 0) {
         alert("⚠️ Este correo ya está en uso. Por favor, inicia sesión.");
         return;
       }
 
+      // Crear el usuario en Firebase Auth
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      setCurrentUser({ email: userCredential.user.email || "", username });
+      const user = userCredential.user;
+
+      // Guardar datos adicionales en Firestore
+      const db = getFirestore();
+      const userRef = doc(collection(db, "users"), user.uid);
+      await setDoc(userRef, {
+        email,
+        username,
+        firstName,
+        lastName,
+        birthDate,
+      });
+
+      // Enviar correo de verificación (opcional)
+      await sendEmailVerification(user);
+      alert("✅ Registro exitoso. Se ha enviado un correo de verificación.");
+
+      // Actualizar el estado del usuario
+      setCurrentUser({ email, username, firstName, lastName, birthDate });
       setIsAuthenticated(true);
-      alert("✅ Registro exitoso");
     } catch (error: any) {
       alert(`⚠️ Error al registrarse: ${error.message}`);
       console.error("Registro fallido:", error);
