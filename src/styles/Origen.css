@@ -1,80 +1,109 @@
-/* styles/Origen.css */
+/* Estilos para la sección hero */
 .hero {
   position: relative;
-  text-align: center;
-  color: white;
-  overflow: hidden; /* Para asegurar que la imagen de fondo no se desborde */
-  margin-bottom: 60px; /* Añadir margen inferior para evitar que el footer pise el contenido */
-}
-
-.background-img {
   width: 100%;
-  height: auto;
-  filter: brightness(0.7); /* Oscurecer la imagen de fondo para mejorar la legibilidad del texto */
-}
-
-.origen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.7); /* Aumentar la opacidad del fondo */
-  padding: 30px;
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el contenedor */
-  max-width: 90%; /* Asegurar que no se salga de la pantalla en dispositivos pequeños */
-}
-
-.titulo-origen {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-weight: bold; /* Hacer el título más destacado */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra de texto para mejor legibilidad */
-}
-
-.contenido-origen {
+  height: 100vh; /* Altura completa de la ventana */
+  overflow: hidden;
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap; /* Permitir que los elementos se ajusten en pantallas pequeñas */
+  justify-content: center;
+  color: white;
+  text-align: center;
+  margin-top: 150px;
 }
 
-.imagen-origen img {
+/* Imagen de fondo */
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+/* Contenedor principal del contenido */
+.origen {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Título */
+.titulo-origen {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor del contenido */
+.contenido-origen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Imagen del CEO */
+.imagen-origen {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  border: 3px solid white; /* Borde blanco para la imagen */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar la imagen */
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.ceo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto del contenido */
 .texto-origen {
-  max-width: 600px;
-  text-align: left;
-  font-size: 1.1rem; /* Aumentar el tamaño de la fuente para mejor legibilidad */
-  line-height: 1.6; /* Mejorar el espaciado entre líneas */
+  max-width: 800px;
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #f0f0f0;
 }
 
-/* Estilos responsivos */
+.texto-origen p {
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos responsive */
 @media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 2rem 0;
+  }
+
   .origen {
-      padding: 20px;
+    padding: 1rem;
   }
 
   .titulo-origen {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 
   .contenido-origen {
-      flex-direction: column; /* Cambiar a disposición vertical en pantallas pequeñas */
-      text-align: center;
+    flex-direction: column;
   }
 
-  .imagen-origen img {
-      width: 120px;
-      height: 120px;
+  .imagen-origen {
+    width: 150px;
+    height: 150px;
   }
 
   .texto-origen {
-      text-align: center; /* Centrar el texto en pantallas pequeñas */
+    font-size: 1rem;
   }
 }

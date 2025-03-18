@@ -5,7 +5,6 @@ import "../styles/Origen.css";
 const Origen = () => {
   return (
     <section className="hero">
-      <img src="../img/ORIGEN.jpg" alt="Fondo Vinos" className="background-img" />
       <div className="origen">
         <h1 className="titulo-origen">Nuestro Origen</h1>
         <div className="contenido-origen">
