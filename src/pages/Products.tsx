@@ -1,6 +1,5 @@
-// Products.tsx
 import React from "react";
-import { database } from "../utils/firebase.utils"; // Asegúrate de que la ruta sea correcta
+import { fotosVino } from "../utils/fotosVino";
 
 interface Product {
   id: string;
@@ -27,11 +26,11 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
             key={product.id}
             className="relative bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105"
           >
-            <div className="w-full h-24 overflow-hidden">
+            <div className="w-full h-64 overflow-hidden">
               <img
-                src={product.image}
+                src={fotosVino[product.id]}
                 alt={product.name}
-                className="w-[32em] h-[18em] object-contain mx-auto"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="p-4">

@@ -1,42 +1,80 @@
 /* styles/Origen.css */
 .hero {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-  
-  .background-img {
-    width: 100%;
-    height: auto;
-  }
-  
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Para asegurar que la imagen de fondo no se desborde */
+  margin-bottom: 60px; /* Añadir margen inferior para evitar que el footer pise el contenido */
+}
+
+.background-img {
+  width: 100%;
+  height: auto;
+  filter: brightness(0.7); /* Oscurecer la imagen de fondo para mejorar la legibilidad del texto */
+}
+
+.origen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7); /* Aumentar la opacidad del fondo */
+  padding: 30px;
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el contenedor */
+  max-width: 90%; /* Asegurar que no se salga de la pantalla en dispositivos pequeños */
+}
+
+.titulo-origen {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold; /* Hacer el título más destacado */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra de texto para mejor legibilidad */
+}
+
+.contenido-origen {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permitir que los elementos se ajusten en pantallas pequeñas */
+}
+
+.imagen-origen img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 3px solid white; /* Borde blanco para la imagen */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar la imagen */
+}
+
+.texto-origen {
+  max-width: 600px;
+  text-align: left;
+  font-size: 1.1rem; /* Aumentar el tamaño de la fuente para mejor legibilidad */
+  line-height: 1.6; /* Mejorar el espaciado entre líneas */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
   .origen {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+      padding: 20px;
   }
-  
+
   .titulo-origen {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+      font-size: 2rem;
   }
-  
+
   .contenido-origen {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+      flex-direction: column; /* Cambiar a disposición vertical en pantallas pequeñas */
+      text-align: center;
   }
-  
+
   .imagen-origen img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+      width: 120px;
+      height: 120px;
   }
-  
+
   .texto-origen {
-    max-width: 600px;
-    text-align: left;
+      text-align: center; /* Centrar el texto en pantallas pequeñas */
   }
+}

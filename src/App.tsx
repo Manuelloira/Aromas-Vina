@@ -31,7 +31,7 @@ const App = () => {
 
   // Cargar productos desde Realtime Database al iniciar la aplicación
   useEffect(() => {
-    const productosRef = ref(db, "products"); // Referencia al nodo "products"
+    const productosRef = ref(db, "/"); // Referencia al nodo "products"
 
     // Escucha cambios en los datos
     onValue(productosRef, (snapshot) => {

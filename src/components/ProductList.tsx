@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase"; // Asegúrate de que la ruta sea correcta
 import { ref, onValue } from "firebase/database";
+import CEOImage from "../assets/CEO.jpg";
 
 interface Product {
   id: string;
@@ -16,7 +17,7 @@ const ProductList: React.FC = () => {
 
   useEffect(() => {
     // Referencia al nodo "products" en Realtime Database
-    const productosRef = ref(db, "products");
+    const productosRef = ref(db, "/");
 
     // Escucha cambios en los datos
     onValue(productosRef, (snapshot) => {
