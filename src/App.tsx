@@ -7,9 +7,9 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
+import ShoppingCart from "./pages/ShoppingCart";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
-import ShoppingCart from "./pages/ShoppingCart";
 import Contacto from "./pages/Contacto";
 import Origen from "./pages/Origen";
 import ProductList from "./components/ProductList";
@@ -70,8 +70,8 @@ const App = () => {
               <Route path="/Origen" element={<Origen />} />
               <Route path="/login" element={<Login />} />
               <Route path="/Checkout" element={<Checkout />} />
-              <Route path="/Shopping-cart" element={<ShoppingCart />} />
-              <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
+              <Route path="/ShoppingCart" element={<ShoppingCart />} />
+                            <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
             </Routes>
             <Footer />
           </div>

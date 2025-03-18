@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         </div>
         <div className="header-actions">
           {isAuthenticated && (
-            <Link to="/cart" className="cart-button">
+            <Link to="/ShoppingCart" className="cart-button">
               🛒 Carrito ({cartItems.length})
             </Link>
           )}
