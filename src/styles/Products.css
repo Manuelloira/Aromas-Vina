@@ -107,3 +107,33 @@
     padding: 0.25rem 0.5rem;
     border-radius: 9999px; /* Bordes completamente redondeados */
   }
+  /* Estilos base para el botón */
+.product-info button {
+  background-color: #8b0000; /* Rojo vino */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  font-size: 1rem; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el mouse (hover) */
+.product-info button:hover {
+  background-color: #6b0000; /* Rojo más oscuro */
+  transform: scale(1.05); /* Ligero aumento de tamaño */
+}
+
+/* Efecto al hacer clic (active) */
+.product-info button:active {
+  background-color: #4b0000; /* Rojo aún más oscuro */
+  transform: scale(0.95); /* Ligera reducción de tamaño */
+}
+
+/* Estilo para cuando el botón está enfocado (accesibilidad) */
+.product-info button:focus {
+  outline: none; /* Elimina el contorno predeterminado */
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.5); /* Sombra para resaltar */
+}

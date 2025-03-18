@@ -1,109 +1,128 @@
 /* Estilos generales */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  /* Estilos para la sección del banner */
-  .banner {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1a1a1a; /* Fondo oscuro */
-  }
-  
-  .banner img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
-  }
-  
-  .banner-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    color: white;
-    padding: 1.5rem;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    border-radius: 0.5rem;
-  }
-  
-  .banner-content h1 {
-    font-size: 2.25rem; /* 36px */
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .banner-content p {
-    font-size: 1.125rem; /* 18px */
-  }
-  
-  .banner-content a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1.5rem;
-    background-color: #3b82f6; /* Azul */
-    color: white;
-    border-radius: 0.375rem; /* 6px */
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .banner-content a:hover {
-    background-color: #2563eb; /* Azul más oscuro */
-  }
-  
-  /* Estilos para la sección de productos destacados */
-  .featured-products {
-    padding: 2rem;
-    background-color: #f3f4f6; /* Fondo gris claro */
-  }
-  
-  .featured-products h2 {
-    font-size: 1.875rem; /* 30px */
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .product-card {
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-  }
-  
-  .product-card img {
-    width: 100%;
-    height: 12rem; /* 192px */
-    object-fit: cover;
-    margin-bottom: 1rem;
-  }
-  
-  .product-card h3 {
-    font-size: 1.25rem; /* 20px */
-    font-weight: 600;
-  }
-  
-  .product-card p {
-    font-size: 0.875rem; /* 14px */
-    color: #4b5563; /* Gris */
-  }
-  
-  .product-card .price {
-    font-size: 1.125rem; /* 18px */
-    font-weight: bold;
-    color: #3b82f6; /* Azul */
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Estilos para la sección del banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Altura del banner */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Evita que la imagen se desborde */
+}
+
+.banner-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6; /* Opacidad de la imagen */
+  z-index: 1; /* Asegura que la imagen esté detrás del contenido */
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2; /* Asegura que el contenido esté por encima de la imagen */
+  text-align: center;
+  color: white;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  border-radius: 0.5rem;
+}
+
+.banner-content h1 {
+  font-size: 2.5rem; /* Tamaño del título */
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.banner-content p {
+  font-size: 1.25rem; /* Tamaño del texto */
+  margin-bottom: 1rem;
+}
+
+.banner-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #8b0000; /* Rojo vino */
+  color: white;
+  border-radius: 0.375rem; /* Bordes redondeados */
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.banner-link:hover {
+  background-color: #6b0000; /* Rojo más oscuro al hacer hover */
+}
+
+/* Estilos para la sección de productos destacados */
+.featured-products {
+  padding: 2rem;
+  background-color: #f9f9f9; /* Fondo gris claro */
+}
+
+.featured-products h2 {
+  font-size: 2rem; /* Tamaño del título */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333; /* Color del texto */
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1rem;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 1rem;
+  margin: 0 1rem 1rem;
+  color: #666;
+}
+
+.product-card .price {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin: 0 1rem 1rem;
+  color: #8b0000; /* Rojo vino */
+}

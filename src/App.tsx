@@ -65,15 +65,12 @@ const App = () => {
               <Route path="/home" element={<Home products={products} />} />
               <Route path="/products" element={<Products products={products} />} />
               <Route path="/product-list" element={<ProductList />} />
-              <Route path="/products/:id" element={<ProductDetail />} />
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/Contacto" element={<Contacto />} />
               <Route path="/Origen" element={<Origen />} />
               <Route path="/login" element={<Login />} />
               <Route path="/Checkout" element={<Checkout />} />
               <Route path="/Shopping-cart" element={<ShoppingCart />} />
-
-              {/* Ruta por defecto para páginas no encontradas (404) */}
               <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
             </Routes>
             <Footer />
