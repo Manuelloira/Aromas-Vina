@@ -30,7 +30,7 @@ const Products: React.FC<ProductsProps> = ({ products }) => {
               <img
                 src={fotosVino[product.id]}
                 alt={product.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover" style={{height: '250px', objectFit: 'cover'}}
               />
             </div>
             <div className="p-4">
