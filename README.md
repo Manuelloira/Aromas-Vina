@@ -1,54 +1,97 @@
-# React + TypeScript + Vite
+# Aromas Viña
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido al repositorio de **Aromas Viña**, una aplicación web diseñada para la compra de vinos exclusivos.
 
-Currently, two official plugins are available:
+## Requisitos Previos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Antes de comenzar con la instalación, asegúrate de tener instalados los siguientes componentes en tu sistema:
 
-## Expanding the ESLint configuration
+- **Node.js** (v16 o superior)
+- **npm** (v8 o superior) o **Yarn** (v1.22 o superior)
+- **Git** (para clonar el repositorio)
+- **Base de datos** (MySQL, PostgreSQL, MongoDB, etc., dependiendo de lo que use tu aplicación)
+- **Otras dependencias** (si es necesario, como Docker, Redis, etc.)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Instalación
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Sigue estos pasos para instalar y configurar la aplicación en tu entorno local.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 1. Clonar el Repositorio
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Primero, clona el repositorio en tu máquina local:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+```bash
+git clone https://github.com/Manuelloira/Aromas-Vina.git
+cd Aromas-Vina
+npm install
+# o
+yarn install
+
+Crea un archivo .env en la raíz del proyecto y configura las variables de entorno necesarias. Puedes usar el archivo .env.example como plantilla:
+cp .env.example .env
+
+Edita el archivo .env y proporciona los valores adecuados para cada variable. Por ejemplo:
+
+PORT=3000
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=aromas_vina
+JWT_SECRET=your_jwt_secret
+
+Asegúrate de que tu base de datos esté configurada y en ejecución. Luego, ejecuta las migraciones para crear las tablas necesarias:
+
+npm run migrate
+# o
+yarn migrate
+
+Una vez que todo esté configurado, puedes iniciar la aplicación:
+
+npm start
+# o
+yarn start
+
+Si estás trabajando en modo de desarrollo, puedes usar:
+
+npm run dev
+# o
+yarn dev
+
+Para ejecutar las pruebas unitarias, usa:
+
+npm test
+# o
+yarn test
+
+Aromas-Vina/
+├── src/                  # Código fuente de la aplicación
+│   ├── models/           # Modelos de la base de datos
+│   ├── services/         # Lógica de negocio
+│   └── utils/            # Utilidades y helpers
+├── migrations/           # Archivos de migración de la base de datos
+├── tests/                # Pruebas unitarias y de integración
+├── .env.example          # Plantilla de variables de entorno
+├── .gitignore            # Archivos y carpetas ignorados por Git
+├── package.json          # Dependencias y scripts de npm
+└── README.md             # Este archivo
+
+Si deseas contribuir al proyecto, por favor sigue estos pasos:
+
+Haz un fork del repositorio.
+
+Crea una rama para tu feature (git checkout -b feature/nueva-funcionalidad).
+
+Realiza tus cambios y haz commit (git commit -m 'Añadir nueva funcionalidad').
+
+Haz push a la rama (git push origin feature/nueva-funcionalidad).
+
+Abre un Pull Request.
+
+
+Si tienes alguna pregunta o sugerencia, no dudes en contactarme:
+
+Nombre: Manuel Loira Vázquez
+
+Email: manuel.loirav@gmail.com
+
+GitHub: Manuelloira
