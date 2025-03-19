@@ -10,7 +10,6 @@ Antes de comenzar con la instalación, asegúrate de tener instalados los siguie
 - **npm** (v8 o superior) o **Yarn** (v1.22 o superior)
 - **Git** (para clonar el repositorio)
 - **Base de datos** (MySQL, PostgreSQL, MongoDB, etc., dependiendo de lo que use tu aplicación)
-- **Otras dependencias** (si es necesario, como Docker, Redis, etc.)
 
 ## Instalación
 
@@ -27,7 +26,7 @@ npm install
 # o
 yarn install
 
-Crea un archivo .env en la raíz del proyecto y configura las variables de entorno necesarias. Puedes usar el archivo .env.example como plantilla:
+###2.Crea un archivo .env en la raíz del proyecto y configura las variables de entorno necesarias. Puedes usar el archivo .env.example como plantilla:
 cp .env.example .env
 
 Edita el archivo .env y proporciona los valores adecuados para cada variable. Por ejemplo:
