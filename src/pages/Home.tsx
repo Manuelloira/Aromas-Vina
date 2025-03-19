@@ -1,7 +1,7 @@
 import React from "react";
 import HomeImage from "../assets/HOME.jpg";
 import { Link } from "react-router-dom";
-import { useSearch } from "../context/SerchContext"; // Importa el contexto de búsqueda
+import { useSearch } from "../context/SerchContext"; 
 import "../styles/Home.css";
 import { fotosVino } from "../utils/fotosVino";
 

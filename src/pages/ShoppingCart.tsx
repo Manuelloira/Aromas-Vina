@@ -1,7 +1,7 @@
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import { fotosVino } from "../utils/fotosVino";
-import "../styles/ShoppingCart.css"; // Importa el archivo CSS
+import "../styles/ShoppingCart.css"; 
 
 const ShoppingCart = () => {
   const { cartItems, removeItem, modifyQuantity, totalAmount } = useCart();

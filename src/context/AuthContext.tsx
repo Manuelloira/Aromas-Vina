@@ -88,7 +88,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         birthDate,
       });
 
-      // Enviar correo de verificación (opcional)
       await sendEmailVerification(user);
 
       // Actualizar el estado del usuario

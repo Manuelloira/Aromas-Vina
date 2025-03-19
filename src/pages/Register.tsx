@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import "../styles/Register.css"; // Importa el archivo CSS
+import "../styles/Register.css";
 
 const Register: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -59,10 +59,10 @@ const Register: React.FC = () => {
 
     try {
       const result = await signUp(email, password, username, firstName, lastName, birthDate);
-      alert(result.message); // Muestra el mensaje de éxito o error
+      alert(result.message); 
 
       if (result.success) {
-        navigate("/"); // Redirigir al inicio o a la página de verificación
+        navigate("/"); 
       }
     } catch (error) {
       alert("Error en el registro. Inténtalo de nuevo.");

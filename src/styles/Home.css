@@ -2,29 +2,29 @@
 .home-container {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
-  margin-top: 80px; /* Margen superior para evitar solapamiento con el Header */
+  margin-top: 80px; 
 }
 
 /* Estilos del banner */
 .container {
   position: relative;
-  height: 400px; /* Altura fija para el banner */
+  height: 400px; 
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  background-color: #333; /* Fondo temporal para verificar visibilidad */
+  background-color: #333; 
 }
 
 .banner-content {
   position: relative;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.5); 
   padding: 2rem;
   border-radius: 10px;
-  max-width: 90%; /* Asegura que el contenido no sea demasiado ancho */
+  max-width: 90%; 
 }
 
 .banner-content h1 {
@@ -56,7 +56,7 @@
 .featured-products {
   padding: 2rem;
   text-align: center;
-  margin-top: 40px; /* Margen superior para separar del banner */
+  margin-top: 40px; 
 }
 
 .featured-products h2 {

@@ -7,7 +7,7 @@ import "../styles/productDetail.css";
 import { Item, Product } from "../types/types";
 import { fotosVino } from "../utils/fotosVino";
 
-// Datos de los productos (simulados)
+// Datos de los productos 
 const products: Product[] = [
   {
     id: 1,
@@ -94,8 +94,8 @@ const products: Product[] = [
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { addItem } = useCart(); // Contexto del carrito
-  const { isAuthenticated } = useAuth(); // Estado de autenticación
+  const { addItem } = useCart(); 
+  const { isAuthenticated } = useAuth(); 
 
   const [product, setProduct] = useState<Product | null>(null);
 
