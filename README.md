@@ -26,7 +26,7 @@ npm install
 # o
 yarn install
 
-###2.Crea un archivo .env en la raíz del proyecto y configura las variables de entorno necesarias. Puedes usar el archivo .env.example como plantilla:
+Crea un archivo .env en la raíz del proyecto y configura las variables de entorno necesarias. Puedes usar el archivo .env.example como plantilla:
 cp .env.example .env
 
 Edita el archivo .env y proporciona los valores adecuados para cada variable. Por ejemplo:
