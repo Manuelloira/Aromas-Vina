@@ -6,7 +6,7 @@
 }
 
 /* Estilos del banner */
-.banner {
+.container {
   position: relative;
   height: 400px; /* Altura fija para el banner */
   overflow: hidden;

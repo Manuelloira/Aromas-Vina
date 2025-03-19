@@ -54,13 +54,16 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
-  
+
     setIsSubmitting(true);
-  
+
     try {
-      await signUp(email, password, username, firstName, lastName, birthDate);
-      alert("Registro exitoso. Se ha enviado un correo de confirmación.");
-      navigate("/"); // Redirigir al inicio o a la página de verificación
+      const result = await signUp(email, password, username, firstName, lastName, birthDate);
+      alert(result.message); // Muestra el mensaje de éxito o error
+
+      if (result.success) {
+        navigate("/"); // Redirigir al inicio o a la página de verificación
+      }
     } catch (error) {
       alert("Error en el registro. Inténtalo de nuevo.");
       console.error(error);

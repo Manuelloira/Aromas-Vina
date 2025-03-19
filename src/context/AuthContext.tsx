@@ -28,7 +28,7 @@ interface AuthContextType {
     firstName: string,
     lastName: string,
     birthDate: string
-  ) => Promise<void>;
+  ) => Promise<{ success: boolean; message: string }>; // Devuelve un objeto con success y message
   signIn: (email: string, password: string) => Promise<void>;
   signOutUser: () => Promise<void>;
 }
@@ -60,13 +60,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     firstName: string,
     lastName: string,
     birthDate: string
-  ) => {
+  ): Promise<{ success: boolean; message: string }> => {
     try {
+      // Validar la contraseña antes de continuar
+      if (password.length < 6) {
+        return { success: false, message: "⚠️ La contraseña es demasiado corta. Debe tener al menos 6 caracteres." };
+      }
+
       // Verificar si el correo ya está en uso
       const existingMethods = await fetchSignInMethodsForEmail(auth, email);
       if (existingMethods.length > 0) {
-        alert("⚠️ Este correo ya está en uso. Por favor, inicia sesión.");
-        return;
+        return { success: false, message: "⚠️ Este correo ya está en uso. Por favor, inicia sesión." };
       }
 
       // Crear el usuario en Firebase Auth
@@ -86,14 +90,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
       // Enviar correo de verificación (opcional)
       await sendEmailVerification(user);
-      alert("✅ Registro exitoso. Se ha enviado un correo de verificación.");
 
       // Actualizar el estado del usuario
       setCurrentUser({ email, username, firstName, lastName, birthDate });
       setIsAuthenticated(true);
+
+      // Éxito: Retornar mensaje de éxito
+      return { success: true, message: "✅ Registro exitoso. Se ha enviado un correo de verificación." };
     } catch (error: any) {
-      alert(`⚠️ Error al registrarse: ${error.message}`);
-      console.error("Registro fallido:", error);
+      // Manejar errores de Firebase
+      if (error.code === "auth/weak-password") {
+        return { success: false, message: "⚠️ La contraseña es demasiado corta. Debe tener al menos 6 caracteres." };
+      } else {
+        return { success: false, message: `⚠️ Error al registrarse: ${error.message}` };
+      }
     }
   };
 

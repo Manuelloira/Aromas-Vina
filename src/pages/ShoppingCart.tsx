@@ -20,7 +20,7 @@ const ShoppingCart = () => {
                 <img src={item.imageUrl} alt={item.title} className="cart-image" />
                 <div>
                   <h2>{item.title}</h2>
-                  <p>€{item.cost.toFixed(2)}</p>
+                  <p>{item.cost.toFixed(2)}€</p>
                 </div>
                 <div className="quantity-container">
                   <div className="quantity-controls">
@@ -33,7 +33,7 @@ const ShoppingCart = () => {
               </div>
             ))}
           </div>
-          <h2 className="total-price">Total: €{totalAmount.toFixed(2)}</h2>
+          <h2 className="total-price">Total:{totalAmount.toFixed(2)} €</h2>
           <button className="checkout-button" onClick={() => navigate("/checkout")}>
             Finalizar Compra
           </button>
